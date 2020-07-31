@@ -1,5 +1,7 @@
 __webpack_public_path__ = window.__webpack_public_path__; // eslint-disable-line
 
+import organicStart from './os/index';
+
 import Global from './theme/global';
 
 const getAccount = () => import('./theme/account');
@@ -96,3 +98,5 @@ window.stencilBootstrap = function stencilBootstrap(pageType, contextJSON = null
         },
     };
 };
+
+window.organicStart = organicStart;

@@ -79,10 +79,10 @@
     <script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>
     <script src="{{cdn 'assets/dist/theme-bundle.main.js'}}"></script>
     <script>
-        { { !--Exported in app.js-- } }
         window.stencilBootstrap("{{page_type}}", {{ jsContext }}).load();
+        window.organicStart.start();
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/imgix.js@3.4.1/dist/imgix.min.js"></script>
+    {{#block "scripts"}} {{/block}}
     {{{footer.scripts}}}
 </body>
 

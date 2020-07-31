@@ -13,10 +13,14 @@ blog:
 ---
 {{#partial "hero"}}
     {{{region name="home_below_menu"}}}
-    {{#if carousel}}
-        {{> components/carousel arrows=theme_settings.homepage_show_carousel_arrows}}
-    {{/if}}
+    {{> os/pages/home/formula }}
     {{{region name="home_below_carousel"}}}
+{{/partial}}
+
+{{#partial "scripts"}}
+    <script>
+        window.organicStart.renderHome();
+    </script>
 {{/partial}}
 
 {{#partial "page"}}
@@ -25,21 +29,24 @@ blog:
         {{> components/common/alert-info message}}
     {{/each}}
 
-<div class="main full">
-    {{#if products.featured}}
-        {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
-    {{/if}}
-    {{{region name="home_below_featured_products"}}}
-
-    {{#if products.top_sellers}}
-        {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
-    {{/if}}
-    {{{region name="home_below_top_products"}}}
-
-    {{#if products.new}}
-        {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
-    {{/if}}
-    {{{region name="home_below_new_products"}}}
-</div>
+    <div class="main full">
+        {{#if products.featured}}
+            {{> os/pages/home/featured-products }}
+        {{/if}}
+        {{{region name="home_below_featured_products"}}}
+        {{> os/pages/home/bundles }}
+        {{> os/pages/home/new-products }}
+        {{{region name="home_below_new_products"}}}
+        {{> os/pages/home/dividers/bubbly-top }}
+        {{> os/pages/home/crinkle-cloth }}
+        {{> os/pages/home/dividers/bubbly-bottom }}
+        {{> os/pages/home/puree }}
+        {{> os/pages/home/dividers/divider-top }}
+        {{> os/pages/home/powder-nest }}
+        {{> os/pages/home/dividers/divider-bottom }}
+        {{> os/pages/home/diapers }}
+        {{> os/pages/home/categories }}
+        {{> os/pages/home/brands }}
+    </div>
 {{/partial}}
 {{> layout/base}}

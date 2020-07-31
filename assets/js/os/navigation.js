@@ -1,6 +1,6 @@
 import Headroom from 'headroom.js';
 
-export default function () {
+const renderNavigation = () => {
     const header = document.querySelector('#hdrm');
     const headroom = new Headroom(header, {
         tolerance: 15,
@@ -25,3 +25,5 @@ export default function () {
 
     headroom.init();
 }
+
+export default renderNavigation;

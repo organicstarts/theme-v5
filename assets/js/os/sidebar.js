@@ -1,4 +1,4 @@
-export default function () {
+const renderSidebar = () => {
     const tint = document.querySelector('#tint');
     const sidebar = document.querySelector('#sidebar');
     const toggleSidebar = document.querySelector('.toggleSidebar');
@@ -18,4 +18,6 @@ export default function () {
         sidebar.setAttribute('aria-hidden', 'false');
         document.body.classList.remove('unscrollable');
     });
-}
+};
+
+export default renderSidebar;

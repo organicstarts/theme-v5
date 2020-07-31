@@ -1,4 +1,4 @@
-import loadSwiperCards from './firebase';
+import loadSwiperCards from './swiperCards';
 
 const categories = (ids) => {
     const xmlhttp = new XMLHttpRequest();
@@ -13,26 +13,20 @@ const categories = (ids) => {
     xmlhttp.send();
 };
 
-if (typeof window !== undefined) {
-    window.renderCategories = () => {
-        const ids = [];
-        const c = document.getElementById('subcategories').getElementsByTagName('div');
-        let i = 0;
-        let x = 0;
-        for (i = 0; i < c.length; i++) {
-            if (c[i].getAttribute('id')) {
-                let id = c[i].getAttribute('id');
-                id = id.replace('subcategory', '');
-                ids[x] = id;
-                x++;
-            }
+const renderCategories = () => {
+    const ids = [];
+    const c = document.getElementById('subcategories') && document.getElementById('subcategories').getElementsByTagName('div');
+    let i = 0;
+    let x = 0;
+    for (i = 0; i < c && c.length; i++) {
+        if (c[i].getAttribute('id')) {
+            let id = c[i].getAttribute('id');
+            id = id.replace('subcategory', '');
+            ids[x] = id;
+            x++;
         }
-        // console.log(ids);
-        // console.log(ids);
-        // console.log(subcategories);
-        // subcategories.map(element => {
-        //     console.log(element);
-        // });
-        categories(ids);
-    };
-}
+    }
+    categories(ids);
+};
+
+export default renderCategories;
