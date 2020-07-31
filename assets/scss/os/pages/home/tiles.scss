@@ -1,0 +1,175 @@
+.tiles {
+    &-group {
+        flex-direction: column;
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+        }
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        &__tile {
+            display: flex;
+            @media screen and (min-width: 768px) {
+                flex: 0 50%;
+                max-width: 50%;
+            }
+            @media screen and (min-width: 1024px) {
+                &:nth-child(2) {
+                    display: none;
+                }
+                flex: 1 0 auto;
+                max-width: calc(100% / 3);
+            }
+            @media screen and (min-width: 1440px) {
+                &:nth-child(2) {
+                    display: flex;
+                }
+                max-width: 25%;
+                flex: 1 0 auto;
+            }
+            position: relative;
+            overflow: hidden;
+
+            
+            @media screen and (max-width: 767px) {
+                &:nth-child(1) > .tile-content, &:nth-child(3) > .tile-content {
+                    align-items: flex-end;
+                    text-align: right;
+                }
+            }
+            & > .tile-content {
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-end;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                padding: 1rem;
+
+                & h3 {
+                    //@include FluidType(320px, 2560px, 24px, 48px, 0px, 1px);
+                    font-family: $header-font;
+                    font-weight: 400;
+                    line-height: 1;
+                    font-size: 1.5rem;
+                    @media screen and (min-width:425px) {
+                        font-size: 2rem;
+                    }
+                    @media screen and (min-width:1024px) {
+                        font-size: 2rem;
+                    }
+                    @media screen and (min-width:2560px) {
+                        font-size: 3rem;
+                    }
+                    color: #fff;
+                    margin: 0 0 0.5rem 0;
+                    @media screen and (min-width: 425px) {
+                        margin: 0 0 1rem 0;
+                    }
+                    text-shadow: 1px 1px 1rem rgba(0, 0, 0, 0.6);
+                    will-change: text-shadow;
+                    transition: text-shadow 0.3s linear;
+                }
+                & h4 {
+                    //@include FluidType(320px, 2560px, 20px, 26px, 0px, 0px);
+                    letter-spacing: 0;
+                    font-size: 1rem;
+                    letter-spacing: 0.5px;
+                    @media screen and (min-width:425px) {
+                        font-size: 1.25rem;
+                        letter-spacing: 0.75px;
+                    }
+                    @media screen and (min-width:1024px) {
+                        line-height: 1.5;
+                        font-size: 0.875rem;
+                        letter-spacing: 0.5px;
+                    }
+                    @media screen and (min-width:1440px) {
+                        font-size: 1rem;
+                        letter-spacing: 0.75px;
+                    }
+                    @media screen and (min-width:2560px) {
+                        font-size: 1.75rem;
+                    }
+                    color: #fff;
+                    margin: 0;
+                    text-shadow: 1px 1px 1rem rgba(0, 0, 0, 0.6);
+                    will-change: text-shadow;
+                    transition: text-shadow 0.3s linear;
+                }
+               
+                & > .smaller {
+                    font-size: 0.875rem;
+                    @media screen and (min-width: 1220px) {
+                        font-size: 1rem;
+                    }
+                    &.tablet {
+                        display: none;
+                    }
+                    &.desktop {
+                        display: block;
+                    }
+                    @media screen and (min-width: 768px) {
+                        &.tablet {
+                            display: block;
+                        }
+                        &.desktop {
+                            display: none;
+                        }
+                    }
+                    @media screen and (min-width: 1000px) {
+                        &.tablet {
+                            display: none;
+                        }
+                        &.desktop {
+                            display: block;
+                        }
+                    }
+                    letter-spacing: 0.5px;
+                    font-family: 'Nunito', sans-serif;
+                }
+                font-size: 1.5rem;
+                @media screen and (min-width: 1220px) {
+                    font-size: 2rem;
+                    padding: 2rem;
+                }
+                font-family: 'Nunito', sans-serif;
+                letter-spacing: 1px;
+                color: #fff;
+                background: linear-gradient(rgba(0,0,0,0), rgba(0, 0, 0, 0.5));   
+                @media screen and (min-width: 768px) {
+                    opacity: 0.9;
+                    background: linear-gradient(rgba(0,0,0,0) 50%, rgba(0, 0, 0, 0.5));   
+                }
+                will-change: opacity;
+                transition: opacity 0.3s linear;
+            }
+            &:hover > .tile-content {
+                opacity: 1; 
+                & h3, & h4 {
+                    text-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.4);
+                }
+            }
+            & > picture {
+                width: 100%;
+                height: 100%;
+                will-change: transform;
+                transform: scale(1.1);
+                transform-origin: center;
+                transition: transform 300ms ease-in-out;
+                & > img {
+                    width: 100%;
+                    height: auto;
+                    margin: 0;
+                }
+            }
+            &:hover > picture {
+                transform: scale(1);
+            }
+        }
+    }
+}

@@ -1,0 +1,84 @@
+.staggered-fade-up {
+    transform: translateY(200%);
+    opacity: 0;
+}
+
+.pagination .list-group {
+    list-style: none;
+}
+
+// Cart Stuff
+.cart {
+    &-sidebar {
+        background: #fff;
+        @include BoxShadow(24);
+        position: fixed;
+        right: 0;
+        width: 80%;
+        min-width: 320px;
+        max-width: 440px;
+        height: 100vh;
+        top: 0;
+        overflow: hidden;
+        bottom: 0;
+        left: auto;
+        right: 0;
+        z-index: 99;
+        opacity: 1;
+        transform: translateX(0%);
+        transition: all 0.5s ease;
+        @media (min-width: 1024px) and (min-height: 900px) {
+            max-height: 768px;
+            top: auto;
+            right: 1rem;
+            border-top-left-radius: 2rem;
+            border-top-right-radius: 2rem;
+            transform: translateY(0%);
+        }
+        &.offcanvas {
+            opacity: 0;
+            transform: translateX(100%);
+            @media (min-width: 1024px) and (min-height: 900px) {
+                transform: translateY(100%);
+            }
+        }
+    }
+    &-wrapper {
+        position: relative;
+    }
+    &-contained {
+        height: 100%;
+        overflow: scroll;
+        overflow-x: hidden;
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+    &-top, &-bottom {
+        background: #fff;
+        display: block;
+        position: fixed;
+        height: auto;
+        width: 100%;
+        min-width: 240px;
+        max-width: 440px;
+        transform: none;
+        z-index: 100;
+        &:after {
+            display: none;
+        }
+    }
+    &-top {
+        top: 0;
+        bottom: auto;
+    }
+    &-bottom {
+        bottom: 0;
+        top: auto;
+    }
+}
+
+#cartPill {
+    left: 100%;
+    border-radius: 99rem;
+    padding: 0.25rem 0.5rem;
+}

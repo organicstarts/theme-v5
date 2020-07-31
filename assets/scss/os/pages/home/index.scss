@@ -1,0 +1,91 @@
+@import "../../config.scss";
+@import "../../helpers/fluid-type.scss";
+@import "../../helpers/images.scss";
+//@import "./jumbotron.scss";
+@import "./wholesale.scss";
+@import "./bundles.scss";
+@import "./crinkle-cloth.scss";
+@import "./formula.scss";
+@import "./brands.scss";
+@import "./categories.scss";
+@import "./tiles.scss";
+@import "./pn-v2.scss";
+//@import "./serenity-kids.scss";
+
+.bg-bundles {
+    overflow: visible;
+    background-image: url("https://triad.imgix.net/os/i/home/baby-shower-divider.svg?v=2&s=c753a91a52e9d0104991730dc3715861");
+    background-repeat: repeat-x;
+    background-position: center top;
+    padding-top: 150px;
+}
+#new-products, #featured-products, #diapers, #puree {
+    & h2 {
+        margin: 1rem;
+        @include FluidType(320px, 2560px, 24px, 64px, 0px, 0px);
+        font-family: $header-font;
+        font-weight: 400;
+        text-align: center;
+        @media (min-width: 1025px) {
+            color: #424242;
+        }
+    }
+}
+
+#top-sellers {
+    display: none;
+}
+
+// Curator
+.crt-post-hover, .crt-grid-post .crt-social-icon {
+    display: none!important
+}
+.crt-widget-grid.crt-grid-col5 .crt-grid-post {
+    padding: 1rem;
+}
+.crt-grid-post .crt-post-c {
+    border-radius: 0.5rem;
+}
+
+#wrapper>main>:first-child:not(header):not(.pt-0) {
+    padding: 0!important;
+}
+
+.divider {
+    position: relative;
+    pointer-events: none;
+    width: 100%;
+    //height: calc(100vw / 8);
+    & svg {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+    &.top {
+        margin-top: 1rem;
+        &.bubbly.offset {
+            margin-top: -10%;
+            transform: translateY(25%);
+        }
+    }
+    &.flipped svg {
+        transform: scaleX(-1);
+    }
+    &.bottom {
+        &.inverted {
+            transform: scaleX(-1) translateX(50%);
+            & svg {
+                transform: translatex(-50%) scaley(-1);
+            }
+        }
+        &.bubbly.offset {
+            margin-top: 0;
+            transform: translateY(0);
+            @media (min-width: 768px) {
+                margin-top: -8%;
+                transform: translateY(15%);
+            }
+        }
+    }
+}
