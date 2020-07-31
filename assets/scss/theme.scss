@@ -56,7 +56,7 @@
 // Fonts
 // -----------------------------------------------------------------------------
 
-@import "fonts/fonts";
+// @import "fonts/fonts";
 
 
 // Components
@@ -83,3 +83,6 @@
 @import "layouts/layouts"; // 1
 
 @import "vendor/jstree/style";
+
+@import "os/index.scss";
+@import "os/pages/home/index.scss";
