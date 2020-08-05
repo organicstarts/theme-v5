@@ -13,28 +13,37 @@ product:
 {{inject "zoomSize" theme_settings.zoom_size}}
 {{inject "productSize" theme_settings.product_size}}
 
-{{#partial "page"}}
+{{#partial "scripts"}}
+    <script>
+        window.organicStart.renderProducts();
+    </script>
+{{/partial}}
 
-    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+{{#partial "page"}}
 
     {{#each product.shipping_messages}}
         {{> components/common/alert-info message}}
     {{/each}}
 
     <div itemscope itemtype="http://schema.org/Product">
-        {{> components/products/product-view schema=true  }}
+        {{> os/components/products/product-view avg_rating=0 reviews=product.reviews schema=true  }}
 
         {{{region name="product_below_content"}}}
 
-        {{#if product.videos.list.length}}
-            {{> components/products/videos product.videos}}
-        {{/if}}
-
-        {{#all settings.show_product_reviews theme_settings.show_product_reviews (if theme_settings.show_product_details_tabs '!==' true)}}
-            {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
-        {{/all}}
-
-        {{> components/products/tabs}}
+        {{> os/components/products/reviews reviews=product.reviews product=product urls=urls}}
+        {{> os/components/products/write-review}}
     </div>
+    {{#if product.related_products}}
+        <h3 class="carousel-title">{{lang 'products.related_products'}}</h3>
+        {{#if settings.data_tag_enabled}}
+            {{> os/components/products/carousel products=product.related_products list="Related Products" wrap="false" align="center"}}
+        {{else}}
+            {{> os/components/products/carousel products=product.related_products wrap="false" align="center"}}
+        {{/if}}
+    {{/if}}
+    {{#if product.similar_by_views}}
+        <h3 class="carousel-title">{{lang 'products.similar_by_views'}}</h3>
+        {{> os/components/products/carousel products=product.similar_by_views columns=6 list="Customers Also Viewed" wrap="false" align="center"}}
+    {{/if}}
 {{/partial}}
 {{> layout/base}}

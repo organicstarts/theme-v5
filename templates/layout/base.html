@@ -71,10 +71,14 @@
     {{> os/components/common/banner }}
     {{> os/components/common/logo }}
     {{> os/components/common/header }}
+    <div id="wrapper" data-currency-code="{{currency_selector.active_currency_code}}">
+        <main id="body">
+            {{#block "header"}} {{/block}}
 
-    {{> os/components/common/header }}
-    {{> os/components/common/body }}
-    {{> os/components/common/footer }}
+            {{> os/components/common/body }}
+        </main>
+        {{> os/components/common/footer }}
+    </div>
 
     <script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>
     <script src="{{cdn 'assets/dist/theme-bundle.main.js'}}"></script>
