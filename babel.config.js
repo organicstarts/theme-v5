@@ -1,5 +1,6 @@
 module.exports = {
     plugins: [
+        '@babel/plugin-proposal-optional-chaining', // Organic Start
         '@babel/plugin-syntax-dynamic-import', // add support for dynamic imports (used in app.js)
         'lodash', // Tree-shake lodash
     ],

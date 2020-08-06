@@ -5,7 +5,7 @@ const categories = (ids) => {
     const url = 'https://us-central1-apt-reason-149015.cloudfunctions.net/inventory';
     xmlhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            const response = JSON.parse(this.responseText);
+            const response = JSON.parse(this.responseText).filter(x => x && x !== null);
             ids.map(id => loadSwiperCards(`categories/${id}.json?v=4`, `subcategory${id}`, response));
         }
     };
@@ -14,18 +14,9 @@ const categories = (ids) => {
 };
 
 const renderCategories = () => {
-    const ids = [];
-    const c = document.getElementById('subcategories') && document.getElementById('subcategories').getElementsByTagName('div');
-    let i = 0;
-    let x = 0;
-    for (i = 0; i < c && c.length; i++) {
-        if (c[i].getAttribute('id')) {
-            let id = c[i].getAttribute('id');
-            id = id.replace('subcategory', '');
-            ids[x] = id;
-            x++;
-        }
-    }
+    const c = document?.getElementById('subcategories')?.getElementsByTagName('div');
+    const getSubcategoryId = el => el?.getAttribute('data-subcategory-id');
+    const ids = [].filter.call(c, el => getSubcategoryId(el)).reduce((acc, cur) => [...acc, getSubcategoryId(cur)], []);
     categories(ids);
 };
 

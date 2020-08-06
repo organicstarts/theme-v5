@@ -91,7 +91,8 @@ const loadSwiperCards = (slug, elem, inv) => {
     const url = `https://apt-reason-149015.firebaseapp.com/${slug}`;
     xmlhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            swiperCards(JSON.parse(this.responseText), elem, inv);
+            const response = JSON.parse(this.responseText);
+            swiperCards(response, elem, inv);
         }
     };
     xmlhttp.open('GET', url, true);
