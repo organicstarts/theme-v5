@@ -4,6 +4,7 @@ brand:
         limit: {{theme_settings.brandpage_products_per_page}}
 ---
 {{inject "brandProductsPerPage" theme_settings.brandpage_products_per_page}}
+
 {{#partial "head"}}
     {{#if pagination.brand.previous}}
         <link rel="prev" href="{{pagination.brand.previous}}">
@@ -13,33 +14,119 @@ brand:
     {{/if}}
 {{/partial}}
 
+{{#partial "styles"}}
+    {{{stylesheet '/assets/dist/categories.css'}}}
+{{/partial}}
+
+{{#partial "header"}} 
+    <header>
+        <div class="header-title bg-{{brand.id}}">
+            <div class="splash">
+                {{#if brand.name '==' 'BABO Botanicals'}}
+                    <img src="https://triad.imgix.net/os/i/brands/babo-botanicals.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'Babo Botanicals'}}
+                    <img src="https://triad.imgix.net/os/i/brands/babo-botanicals.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'Bambo Nature'}}
+                    <img src="https://triad.imgix.net/os/i/brands/bambo-nature.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'Boiron'}}
+                    <img src="https://triad.imgix.net/os/i/brands/boiron.png" alt="{{brand.name}}" title="{{brand.name}}">
+                    {{else if brand.name '==' 'Crinkle Cloth'}}
+                    <img src="https://triad.imgix.net/os/i/brands/crinkle-cloth.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                    {{else if brand.name '==' 'Day One by Organic Start'}}
+                    <img src="https://triad.imgix.net/os/i/brands/day-one.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'Earth Mama Organics'}}
+                    <img src="https://triad.imgix.net/os/i/brands/earth-mama.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'erbaviva'}}
+                    <img src="https://triad.imgix.net/os/i/brands/erbaviva.png?w=320" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'Green Goo by Sierra Sage'}}
+                    <img src="https://triad.imgix.net/os/i/brands/green-goo.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'HiPP'}}
+                    <img src="https://triad.imgix.net/os/i/brands/hipp.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'Holle'}}
+                    <img src="https://triad.imgix.net/os/i/brands/holle.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' "Jack N' Jill"}}
+                    <img src="https://triad.imgix.net/os/i/brands/jack-n-jill.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'Kabrita'}}
+                    <img src="https://triad.imgix.net/os/i/brands/kabrita.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'Lac Larde'}}
+                    <img src="https://triad.imgix.net/os/i/brands/lac-larde.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' "Lafe's Natural BodyCare"}}
+                    <img src="https://triad.imgix.net/os/i/brands/lafes.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'Lebenswert'}}
+                    <img src="https://triad.imgix.net/os/i/brands/lebenswert.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'Lebenswert Bio'}}
+                    <img src="https://triad.imgix.net/os/i/brands/lebenswert.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'Little Zi'}}
+                    <img src="https://triad.imgix.net/os/i/brands/little-zi.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'Loulouka'}}
+                    <img src="https://triad.imgix.net/os/i/brands/loulouka.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'Mambino Organics'}}
+                    <img src="https://triad.imgix.net/os/i/brands/mambino.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'NANNYCare'}}
+                    <img src="https://triad.imgix.net/os/i/brands/nannycare.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'Natures Paradise Organics'}}
+                    <img src="https://triad.imgix.net/os/i/brands/natures-paradise.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'Organic Start'}}
+                    <img src="https://triad.imgix.net/os/i/logo.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'Powder Nest'}}
+                    <img src="https://triad.imgix.net/pn/i/logo-green.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'RADIUS'}}
+                    <img src="https://triad.imgix.net/os/i/brands/radius.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'Rubbabu'}}
+                    <img src="https://triad.imgix.net/os/i/brands/rubbabu.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'Serenity Kids'}}
+                    <img class="mx-auto img-fluid" src="https://triad.imgix.net/os/i/brands/serenity-kids.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'Topfer'}}
+                    <img src="https://triad.imgix.net/os/i/brands/topfer.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else if brand.name '==' 'ZNYA'}}
+                    <img src="https://triad.imgix.net/os/i/brands/znya.svg" alt="{{brand.name}}" title="{{brand.name}}">
+                {{else}}
+                    <h1>{{brand.name}}</h1>
+                {{/if}}
+            </div>
+        </div>
+        <!--
+            {{> os/components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+        -->
+    </header>
+{{/partial}}
+
 {{#partial "page"}}
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-{{#if brand.image}}
-    <div class="brand-image-container">
-        {{> components/common/responsive-img
-            image=brand.image
-            fallback_size=theme_settings.thumb_size
-            lazyload='disabled'
-        }}
-    </div>
-{{/if}}
-<h1 class="page-heading">{{brand.name}}</h1>
-{{{region name="brand_below_header"}}}
-<div class="page">
-    <aside class="page-sidebar" id="faceted-search-container">
-        {{> components/brand/sidebar}}
-    </aside>
-
-    <main class="page-content" id="product-listing-container">
-        {{#if brand.products}}
-            {{> components/brand/product-listing}}
-        {{else}}
-            <p>{{lang 'brands.no_products'}}</p>
+    {{#if brand.faceted_search_enabled}}
+            {{> components/faceted-search/index brand}}
+    {{else}}
+        {{#if shop_by_brand}}
+            <div class="container mt-4 d-none">
+                <div class="category-carousel">
+                    <div class="title ml-1 mb-1">More Brands</div>
+                    <div class="vertical-align-middle nav-sub carousel w-100">
+                        {{#each shop_by_brand}}
+                            <a class="nav-item link-unstyled" href="{{url}}" alt="{{name}}" title="{{name}}">{{name}}</a>
+                        {{/each}}
+                        <a class="nav-item link-unstyled" href="{{urls.brands}}">{{lang 'common.view_all'}} <i class="fas fa-angle-double-right"></i></a>
+                    </div>
+                </div>
+            </div>
         {{/if}}
-        {{{region name="brand_below_content"}}}
-    </main>
-</div>
+    {{/if}}
+    {{{snippet 'brand'}}}
+    {{#if brand.products}}
+        <div class="filter">
+            {{> components/products/filter sort=pagination.brand.sort}}
+        </div>
+        <form action="{{urls.compare}}" method='POST' {{#if settings.data_tag_enabled}} data-list-name="Brand: {{brand.name}}" {{/if}} data-product-compare>
+            {{#if theme_settings.product_list_display_mode '===' 'grid'}}
+                {{> os/components/products/grid products=brand.products show_compare=brand.show_compare theme_settings=theme_settings event="list"}}
+            {{else}}
+                {{> os/components/products/list products=brand.products show_compare=brand.show_compare theme_settings=theme_settings event="list"}}
+            {{/if}}
+        </form>
 
+        {{> components/common/paginator pagination.brand}}
+    {{else}}
+        <div class="container mt-4">
+            <p>{{lang 'brands.no_products'}}</p>
+        </div>
+    {{/if}}
 {{/partial}}
 {{> layout/base}}

@@ -5,7 +5,6 @@ category:
         limit: {{theme_settings.categorypage_products_per_page}}
 ---
 {{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
-{{inject "categoryId" category.id}}
 
 {{#partial "head"}}
     {{#if pagination.category.previous}}
@@ -14,6 +13,9 @@ category:
     {{#if pagination.category.next}}
         <link rel="next" href="{{pagination.category.next}}">
     {{/if}}
+{{/partial}}
+{{#partial "styles"}}
+    {{{stylesheet '/assets/dist/categories.css'}}}
 {{/partial}}
 
 {{#partial "scripts"}}
@@ -24,101 +26,89 @@ category:
     {{/or}}
 {{/partial}}
 
-{{#partial "page"}}
-
-    {{#if category.image}}
-        <!-- {{> components/common/responsive-img
-            image=category.image
-            fallback_size=theme_settings.zoom_size
-            lazyload=theme_settings.lazyload_mode
-            class="category-header-image"
-        }} -->
-    {{/if}}
-
-    {{#unless theme_settings.hide_category_page_heading }}
-        <header>
-            <div class="header-title bg-{{category.id}}" style="{{#if category.image}}background-image:url('{{getImage category.image 'zoom_size'}}');{{/if}}">
-                <div class="splash {{#or 
-                    (if category.name '==' 'Baby Care') 
-                    (if category.name '==' 'Storage & Accessories') 
-                    (if category.name '==' 'Baby Food') 
-                    (if category.name '==' 'Porridge') 
-                    (if category.name '==' 'Clothes') 
-                    (if category.name '==' 'Diapers') 
-                    (if category.name '==' 'Toys') 
-                    (if category.name '==' 'Mommy')
-                    (if category.name '==' 'Fruit & Vegetable Purees') 
-                    (if category.name '==' 'Snacks & Teas') 
-                }}tint{{else}}{{#if category.image}}tint{{/if}}{{/or}}">
-                    {{#if category.name '==' 'Babo Botanicals'}}
-                        <img src="https://triad.imgix.net/os/i/brands/babo-botanicals.svg" alt="{{category.name}}" title="{{category.name}}">
-                    {{else if category.name '==' 'Bambo Nature'}}
-                        <img src="https://triad.imgix.net/os/i/brands/bambo-nature.svg" alt="{{category.name}}" title="{{category.name}}">
-                    {{else if category.name '==' 'Boiron'}}
-                        <img src="https://triad.imgix.net/os/i/brands/boiron.png" alt="{{category.name}}" title="{{category.name}}">
-                    {{else if category.name '==' 'Earth Mama Organics'}}
-                        <img src="https://triad.imgix.net/os/i/brands/earth-mama.svg" alt="{{category.name}}" title="{{category.name}}">
-                    {{else if category.name '==' 'erbaviva'}}
-                        <img src="https://triad.imgix.net/os/i/brands/erbaviva.png?w=320" alt="{{category.name}}" title="{{category.name}}">
-                    {{else if category.name '==' 'Green Goo by Sierra Sage'}}
-                        <img src="https://triad.imgix.net/os/i/brands/green-goo.svg" alt="{{category.name}}" title="{{category.name}}">
-                    {{else if category.name '==' 'HiPP'}}
-                        <img src="https://triad.imgix.net/os/i/brands/hipp.svg" alt="{{category.name}}" title="{{category.name}}">
-                    {{else if category.name '==' 'Holle'}}
-                        <img src="https://triad.imgix.net/os/i/brands/holle.svg" alt="{{category.name}}" title="{{category.name}}">
-                    {{else if category.name '==' "Jack N' Jill"}}
-                        <img src="https://triad.imgix.net/os/i/brands/jack-n-jill.svg" alt="{{category.name}}" title="{{category.name}}">
-                    {{else if category.name '==' 'Kabrita'}}
-                        <img src="https://triad.imgix.net/os/i/brands/kabrita.svg" alt="{{category.name}}" title="{{category.name}}">
-                    {{else if category.name '==' 'Lac Larde'}}
-                        <img src="https://triad.imgix.net/os/i/brands/lac-larde.svg" alt="{{category.name}}" title="{{category.name}}">
-                    {{else if category.name '==' "Lafe's Natural BodyCare"}}
-                        <img src="https://triad.imgix.net/os/i/brands/lafes.svg" alt="{{category.name}}" title="{{category.name}}">
-                    {{else if category.name '==' 'Lebenswert'}}
-                        <img src="https://triad.imgix.net/os/i/brands/lebenswert.svg" alt="{{category.name}}" title="{{category.name}}">
-                    {{else if category.name '==' 'Lebenswert Bio'}}
-                        <img src="https://triad.imgix.net/os/i/brands/lebenswert.svg" alt="{{category.name}}" title="{{category.name}}">
-                    {{else if category.name '==' 'Little Zi'}}
-                        <img src="https://triad.imgix.net/os/i/brands/little-zi.svg" alt="{{category.name}}" title="{{category.name}}">
-                    {{else if category.name '==' 'Loulouka'}}
-                        <img src="https://triad.imgix.net/os/i/brands/loulouka.svg" alt="{{category.name}}" title="{{category.name}}">
-                    {{else if category.name '==' 'Mambino Organics'}}
-                        <img src="https://triad.imgix.net/os/i/brands/mambino.svg" alt="{{category.name}}" title="{{category.name}}">
-                    {{else if category.name '==' 'NANNYCare'}}
-                        <img src="https://triad.imgix.net/os/i/brands/nannycare.svg" alt="{{category.name}}" title="{{category.name}}">
-                    {{else if category.name '==' 'Natures Paradise Organics'}}
-                        <img src="https://triad.imgix.net/os/i/brands/natures-paradise.svg" alt="{{category.name}}" title="{{category.name}}">
-                    {{else if category.name '==' 'Organic Start'}}
-                        <img src="https://triad.imgix.net/os/i/logo.svg" alt="{{category.name}}" title="{{category.name}}">
-                    {{else if category.name '==' 'RADIUS'}}
-                        <img src="https://triad.imgix.net/os/i/brands/radius.svg" alt="{{category.name}}" title="{{category.name}}">
-                    {{else if category.name '==' 'Rubbabu'}}
-                        <img src="https://triad.imgix.net/os/i/brands/rubbabu.svg" alt="{{category.name}}" title="{{category.name}}">
-                    {{else if category.name '==' 'Topfer'}}
-                        <img src="https://triad.imgix.net/os/i/brands/topfer.svg" alt="{{category.name}}" title="{{category.name}}">
-                    {{else if category.name '==' 'ZNYA'}}
-                        <img src="https://triad.imgix.net/os/i/brands/znya.svg" alt="{{category.name}}" title="{{category.name}}">
-                    {{else}}
-                        <h1 class="{{#if category.image}}tint{{/if}}">{{category.name}}</h1>
-                        {{#if category.image}}
-                            <img class="d-none" src="{{getImage category.image 'zoom_size'}}" alt="{{category.name}}" title="{{category.name}}">
-                        {{/if}}
+{{#partial "header"}} 
+    <header>
+        <div class="header-title bg-{{category.id}}" style="{{#if category.image}}background-image:url('{{getImage category.image 'zoom_size'}}');{{/if}}">
+            <div class="splash {{#or 
+                (if category.name '==' 'Baby Care') 
+                (if category.name '==' 'Storage & Accessories') 
+                (if category.name '==' 'Baby Food') 
+                (if category.name '==' 'Porridge') 
+                (if category.name '==' 'Clothes') 
+                (if category.name '==' 'Diapers') 
+                (if category.name '==' 'Toys') 
+                (if category.name '==' 'Mommy')
+                (if category.name '==' 'Fruit & Vegetable Purees') 
+                (if category.name '==' 'Snacks & Teas') 
+            }}tint{{else}}{{#if category.image}}tint{{/if}}{{/or}}">
+                {{#if category.name '==' 'Babo Botanicals'}}
+                    <img src="https://triad.imgix.net/os/i/brands/babo-botanicals.svg" alt="{{category.name}}" title="{{category.name}}">
+                {{else if category.name '==' 'Bambo Nature'}}
+                    <img src="https://triad.imgix.net/os/i/brands/bambo-nature.svg" alt="{{category.name}}" title="{{category.name}}">
+                {{else if category.name '==' 'Boiron'}}
+                    <img src="https://triad.imgix.net/os/i/brands/boiron.png" alt="{{category.name}}" title="{{category.name}}">
+                {{else if category.name '==' 'Earth Mama Organics'}}
+                    <img src="https://triad.imgix.net/os/i/brands/earth-mama.svg" alt="{{category.name}}" title="{{category.name}}">
+                {{else if category.name '==' 'erbaviva'}}
+                    <img src="https://triad.imgix.net/os/i/brands/erbaviva.png?w=320" alt="{{category.name}}" title="{{category.name}}">
+                {{else if category.name '==' 'Green Goo by Sierra Sage'}}
+                    <img src="https://triad.imgix.net/os/i/brands/green-goo.svg" alt="{{category.name}}" title="{{category.name}}">
+                {{else if category.name '==' 'HiPP'}}
+                    <img src="https://triad.imgix.net/os/i/brands/hipp.svg" alt="{{category.name}}" title="{{category.name}}">
+                {{else if category.name '==' 'Holle'}}
+                    <img src="https://triad.imgix.net/os/i/brands/holle.svg" alt="{{category.name}}" title="{{category.name}}">
+                {{else if category.name '==' "Jack N' Jill"}}
+                    <img src="https://triad.imgix.net/os/i/brands/jack-n-jill.svg" alt="{{category.name}}" title="{{category.name}}">
+                {{else if category.name '==' 'Kabrita'}}
+                    <img src="https://triad.imgix.net/os/i/brands/kabrita.svg" alt="{{category.name}}" title="{{category.name}}">
+                {{else if category.name '==' 'Lac Larde'}}
+                    <img src="https://triad.imgix.net/os/i/brands/lac-larde.svg" alt="{{category.name}}" title="{{category.name}}">
+                {{else if category.name '==' "Lafe's Natural BodyCare"}}
+                    <img src="https://triad.imgix.net/os/i/brands/lafes.svg" alt="{{category.name}}" title="{{category.name}}">
+                {{else if category.name '==' 'Lebenswert'}}
+                    <img src="https://triad.imgix.net/os/i/brands/lebenswert.svg" alt="{{category.name}}" title="{{category.name}}">
+                {{else if category.name '==' 'Lebenswert Bio'}}
+                    <img src="https://triad.imgix.net/os/i/brands/lebenswert.svg" alt="{{category.name}}" title="{{category.name}}">
+                {{else if category.name '==' 'Little Zi'}}
+                    <img src="https://triad.imgix.net/os/i/brands/little-zi.svg" alt="{{category.name}}" title="{{category.name}}">
+                {{else if category.name '==' 'Loulouka'}}
+                    <img src="https://triad.imgix.net/os/i/brands/loulouka.svg" alt="{{category.name}}" title="{{category.name}}">
+                {{else if category.name '==' 'Mambino Organics'}}
+                    <img src="https://triad.imgix.net/os/i/brands/mambino.svg" alt="{{category.name}}" title="{{category.name}}">
+                {{else if category.name '==' 'NANNYCare'}}
+                    <img src="https://triad.imgix.net/os/i/brands/nannycare.svg" alt="{{category.name}}" title="{{category.name}}">
+                {{else if category.name '==' 'Natures Paradise Organics'}}
+                    <img src="https://triad.imgix.net/os/i/brands/natures-paradise.svg" alt="{{category.name}}" title="{{category.name}}">
+                {{else if category.name '==' 'Organic Start'}}
+                    <img src="https://triad.imgix.net/os/i/logo.svg" alt="{{category.name}}" title="{{category.name}}">
+                {{else if category.name '==' 'RADIUS'}}
+                    <img src="https://triad.imgix.net/os/i/brands/radius.svg" alt="{{category.name}}" title="{{category.name}}">
+                {{else if category.name '==' 'Rubbabu'}}
+                    <img src="https://triad.imgix.net/os/i/brands/rubbabu.svg" alt="{{category.name}}" title="{{category.name}}">
+                {{else if category.name '==' 'Topfer'}}
+                    <img src="https://triad.imgix.net/os/i/brands/topfer.svg" alt="{{category.name}}" title="{{category.name}}">
+                {{else if category.name '==' 'ZNYA'}}
+                    <img src="https://triad.imgix.net/os/i/brands/znya.svg" alt="{{category.name}}" title="{{category.name}}">
+                {{else}}
+                    <h1 class="{{#if category.image}}tint{{/if}}">{{category.name}}</h1>
+                    {{#if category.image}}
+                        <img class="d-none" src="{{getImage category.image 'zoom_size'}}" alt="{{category.name}}" title="{{category.name}}">
                     {{/if}}
-                </div>
+                {{/if}}
             </div>
-            <!--
-                {{> os/components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-                {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-            -->
-        </header>
-        {{{region name="category_below_header"}}}
-    {{/unless}}
+        </div>
+        <!--
+            {{> os/components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+        -->
+    </header>
+{{/partial}}
 
+{{#partial "page"}}
     {{#or (if category.name '==' "Baby Care") (if category.name '==' "Baby Food") (if category.name '==' "Clothes") (if category.name '==' "Diapers") (if category.name '==' "Mommy")}}
         <div id="subcategories">
             {{#each category.subcategories}}
                 <h2>{{name}}</h2>
-                <div id="subcategory{{id}}">
+                <div id="subcategory{{id}}" data-subcategory-id="{{id}}">
                     <div class="products swiper-container">
                         <div class="swiper-wrapper">
                             
@@ -203,5 +193,4 @@ category:
         {{/if}}
     {{/or}}
 {{/partial}}
-
 {{> layout/base}}
