@@ -1,6 +1,9 @@
 // Configuration
 @import "config";
 
+@import url("https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.1/css/bootstrap.min.css");
+
 @import "reset";
 
 // Core Reset
@@ -123,3 +126,9 @@
         }
     }
 }
+
+
+@import "pages/brands.scss";
+@import "pages/categories.scss";
+@import "pages/products.scss";
+@import "pages/home/index.scss";

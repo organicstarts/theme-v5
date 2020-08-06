@@ -32,13 +32,13 @@
 
 @import "settings/global/tools"; // 5
 
-@import "../../node_modules/@bigcommerce/citadel/dist/settings/normalize/normalize"; // 2
+// @import "../../node_modules/@bigcommerce/citadel/dist/settings/normalize/normalize"; // 2
 @import "../../node_modules/@bigcommerce/citadel/dist/settings/foundation/foundation"; // 2
 @import "../../node_modules/@bigcommerce/citadel/dist/settings/bigcommerce/bigcommerce"; // 2
 
 @import "../../node_modules/@bigcommerce/citadel/dist/vendor/foundation/foundation"; // 3
 
-@import "settings/normalize/normalize"; // 4
+// @import "settings/normalize/normalize"; // 4
 @import "settings/vendor/vendor"; // 4
 @import "settings/foundation/foundation"; // 4
 @import "settings/citadel/citadel"; // 4
@@ -68,7 +68,7 @@
 //
 // -----------------------------------------------------------------------------
 
-@import "../../node_modules/@bigcommerce/citadel/dist/vendor/normalize/normalize"; // 1
+// @import "../../node_modules/@bigcommerce/citadel/dist/vendor/normalize/normalize"; // 1
 @import "../../node_modules/@bigcommerce/citadel/dist/components/components"; // 2
 @import "components/components"; // 3
 
@@ -85,7 +85,3 @@
 @import "vendor/jstree/style";
 
 @import "os/index.scss";
-@import "os/pages/brands.scss";
-@import "os/pages/categories.scss";
-@import "os/pages/products.scss";
-@import "os/pages/home/index.scss";
