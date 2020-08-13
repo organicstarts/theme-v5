@@ -242,8 +242,8 @@ export default class ProductDetails {
         }
 
         utils.api.productAttributes.optionChange(productId, $form.serialize(), 'products/bulk-discount-rates', (err, response) => {
-            const productAttributesData = response.data || {};
-            const productAttributesContent = response.content || {};
+            const productAttributesData = response && response.data || {};
+            const productAttributesContent = response && response.content || {};
             this.updateProductAttributes(productAttributesData);
             this.updateView(productAttributesData, productAttributesContent);
         });

@@ -35,17 +35,17 @@ const parseData = products => {
                     <strong>${product.name}</strong>
                 </a>
                 <div class="rfc">
-                    <a href="#" data-product-id="${product.id}" onclick="window.removeFromCart(this);return false;"><small>REMOVE</small></a>
+                    <a href="#" data-product-id="${product.id}" onclick="window.organicStart.cart.removeFromCart(this);return false;"><small>REMOVE</small></a>
                 </div>
             </td>
         </tr>
         <tr>
             <td class="left">
-                <a class="qty minus" href="#" onclick="window.removeOneFromCart(this);return false;" data-product-id="${product.id}" data-product-quantity="${product.quantity}">
+                <a class="qty minus" href="#" onclick="window.organicStart.cart.removeOneFromCart(this);return false;" data-product-id="${product.id}" data-product-quantity="${product.quantity}">
                     -
                 </a>
                 &nbsp;${product.quantity}&nbsp;
-                <a class="qty add" href="#" onclick="window.addOneToCart(this);return false;" data-product-id="${product.productId}" data-product-quantity="${product.quantity}">
+                <a class="qty add" href="#" onclick="window.organicStart.cart.addOneToCart(this);return false;" data-product-id="${product.productId}" data-product-quantity="${product.quantity}">
                     +
                 </a>
             </td>
@@ -249,5 +249,5 @@ export default {
     renderCart,
     removeFromCart,
     removeOneFromCart,
-    addOneToCart
+    addOneToCart,
 };

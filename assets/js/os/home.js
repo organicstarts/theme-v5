@@ -1,32 +1,14 @@
-import Swiper from 'swiper';
+import Swiper from 'swiper/bundle';
 import loadSwiperCards from './swiperCards';
 
 const renderHome = () => {
-    let i = 0;
-    const colors = [
-        'green', 'pink', 'blue',
-    ];
-
-    const xmlhttp = new XMLHttpRequest();
-    const url = 'https://us-central1-apt-reason-149015.cloudfunctions.net/inventory';
-
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState === 4 && this.status === 200) {
-            const response = JSON.parse(this.responseText);
-            loadSwiperCards('diapers.json', 'diapers', response);
-            loadSwiperCards('puree.json', 'puree', response);
-        }
-    };
-    xmlhttp.open('GET', url, true);
-    xmlhttp.send();
-
-    new Swiper('#categories .swiper-container', {
+    const swiperCategories = element => new Swiper(element, {
         slidesPerView: 'auto',
         loop: true,
         watchSlidesVisibility: true,
         centeredSlides: true,
     });
-    new Swiper('#brands .swiper-container', {
+    const swiperBrands = element => new Swiper(element, {
         navigation: {
             nextEl: '#swiper-next',
             prevEl: '#swiper-prev',
@@ -36,7 +18,6 @@ const renderHome = () => {
             type: 'bullets',
             dynamicBullets: true,
             dynamicMainBullets: 1,
-
         },
         slidesPerView: 1,
         spaceBetween: 16,
@@ -60,10 +41,18 @@ const renderHome = () => {
         },
         watchSlidesVisibility: true,
     });
+    let i = 0;
+    const colors = [
+        'green', 'pink', 'blue',
+    ];
     setInterval(() => {
         document.getElementById('powder-nest').classList = colors[i];
-        i = (i === 2 ? 0 : i++);
+        i = (i === 2 ? 0 : i + 1);
     }, 3000);
+    swiperCategories('#categories .swiper-container');
+    swiperBrands('#brands .swiper-container');
+    loadSwiperCards(142, 'diapers');
+    loadSwiperCards(34, 'puree');
 };
 
 export default renderHome;

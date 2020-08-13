@@ -19,7 +19,7 @@
 
     {{#each this.values}}
         <input
-            class="form-radio"
+            class="form-radio{{#if @first}} first{{/if}}{{#if @last}} last{{/if}}"
             type="radio"
             id="attribute_radio_{{../id}}_{{id}}"
             name="attribute[{{../id}}]"
@@ -29,6 +29,61 @@
                 data-default
             {{/if}}
             {{#if ../required}}required{{/if}}>
-        <label data-product-attribute-value="{{id}}" class="form-label" for="attribute_radio_{{../id}}_{{id}}">{{this.label}}</label>
+        <label data-product-attribute-value="{{id}}" class="form-label{{#if @first}} first{{/if}}{{#if @last}} last{{/if}}{{#contains this.label 'BestSeller'}} best-seller{{/contains}}" for="attribute_radio_{{../id}}_{{id}}">
+            <span>
+                {{#or (occurrences this.label "Tin") (occurrences this.label "tin")}}
+                    {{#contains this.label "BestSeller"}}
+                        <strong>MOST POPULAR</strong>
+                    {{/contains}}
+                    {{#contains this.label "Single"}}
+                        1 TIN(S)
+                    {{else contains this.label "02"}}
+                        2 TINS
+                    {{else contains this.label "4 Pack"}}
+                        4 TINS
+                    {{else contains this.label "6 Pack"}}
+                        6 TINS
+                    {{else contains this.label "8 Pack"}}
+                        8 TINS
+                    {{else contains this.label "10 Pack"}}
+                        10 TINS
+                    {{else contains this.label "12 Pack"}}
+                        12 TINS
+                    {{else}}
+                        {{this.label}}
+                    {{/contains}}
+                {{else}}
+                    {{#contains this.label "BestSeller"}}
+                        <strong>MOST POPULAR</strong>
+                    {{/contains}}
+                    {{#contains this.label "Single"}}
+                        1 BOX(ES)
+                    {{else contains this.label "02"}}
+                        2 BOXES
+                    {{else contains this.label "4 Pack"}}
+                        4 BOXES
+                    {{else contains this.label "6 Pack"}}
+                        6 BOXES
+                    {{else contains this.label "8 Pack"}}
+                        8 BOXES
+                    {{else contains this.label "10 Pack"}}
+                        10 BOXES
+                    {{else contains this.label "12 Pack"}}
+                        12 BOXES
+                    {{else}}
+                        {{this.label}}
+                    {{/contains}}
+                {{/or}}
+            </span>
+            <span class="pap priceAndPercent-{{id}}">
+            </span>
+        </label>
     {{/each}}
+    <script>
+        window.onload = () => {
+            {{#each this.values}}
+                    window.organicStart.priceAndPercent({{id}}, "{{this.label}}");
+            {{/each}}
+        };
+    </script>
 </div>

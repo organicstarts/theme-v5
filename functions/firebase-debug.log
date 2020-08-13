@@ -1,0 +1,67 @@
+[debug] [2020-08-07T02:41:10.241Z] ----------------------------------------------------------------------
+[debug] [2020-08-07T02:41:10.242Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js functions:shell
+[debug] [2020-08-07T02:41:10.243Z] CLI Version:   8.7.0
+[debug] [2020-08-07T02:41:10.243Z] Platform:      win32
+[debug] [2020-08-07T02:41:10.243Z] Node Version:  v10.16.0
+[debug] [2020-08-07T02:41:10.244Z] Time:          Thu Aug 06 2020 22:41:10 GMT-0400 (Eastern Daylight Time)
+[debug] [2020-08-07T02:41:10.244Z] ----------------------------------------------------------------------
+[debug] [2020-08-07T02:41:10.244Z] 
+[debug] [2020-08-07T02:41:10.251Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-08-07T02:41:10.251Z] > authorizing via signed-in user
+[debug] [2020-08-07T02:41:10.251Z] [iam] checking project apt-reason-149015 for permissions ["firebase.projects.get"]
+[debug] [2020-08-07T02:41:10.254Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/apt-reason-149015:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2020-08-07T02:41:10.563Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 07 Aug 2020 02:41:21 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=141","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-08-07T02:41:12.599Z] [functions] Using node@10 from host.
+[debug] [2020-08-07T02:41:12.605Z] [functions] Watching "C:\Users\Isaiah\Documents\Organic Start\theme-v5\functions" for Cloud Functions...
+[debug] [2020-08-07T02:41:12.686Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-08-07T02:41:12.686Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-08-07T02:41:12.686Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2020-08-07T02:41:12.686Z] DEBUG: [worker-~diagnostic~-5dc1b419-07c8-46e3-9b11-2b2e039b847d]: Assigning socketPath: \\?\pipe\C:\Users\Isaiah\Documents\Organic Start\theme-v5\functions\16228
+[debug] [2020-08-07T02:41:12.686Z] DEBUG: [worker-~diagnostic~-5dc1b419-07c8-46e3-9b11-2b2e039b847d]: BUSY
+[debug] [2020-08-07T02:41:13.050Z] DEBUG: [runtime-status] [16228] Functions runtime initialized. {"cwd":"C:\\Users\\Isaiah\\Documents\\Organic Start\\theme-v5\\functions","node_version":"10.16.0"}
+[debug] [2020-08-07T02:41:13.051Z] DEBUG: [runtime-status] [16228] Disabled runtime features: undefined
+[debug] [2020-08-07T02:41:13.054Z] DEBUG: [runtime-status] [16228] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"C:\\Users\\Isaiah\\Documents\\Organic Start\\theme-v5\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-08-07T02:41:13.055Z] DEBUG: [runtime-status] [16228] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.9.0","resolution":"C:\\Users\\Isaiah\\Documents\\Organic Start\\theme-v5\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-08-07T02:41:13.056Z] DEBUG: [runtime-status] [16228] Found local functions config: C:\Users\Isaiah\Documents\Organic Start\theme-v5\functions/.runtimeconfig.json
+[debug] [2020-08-07T02:41:13.056Z] DEBUG: [runtime-status] [16228] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.9.0","resolution":"C:\\Users\\Isaiah\\Documents\\Organic Start\\theme-v5\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-08-07T02:41:13.059Z] DEBUG: [runtime-status] [16228] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}]
+[debug] [2020-08-07T02:41:13.060Z] DEBUG: [runtime-status] [16228] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.9.0","resolution":"C:\\Users\\Isaiah\\Documents\\Organic Start\\theme-v5\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-08-07T02:41:13.103Z] DEBUG: [runtime-status] [16228] Checked functions.config() {"config":{}}
+[debug] [2020-08-07T02:41:13.104Z] DEBUG: [runtime-status] [16228] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.9.0","resolution":"C:\\Users\\Isaiah\\Documents\\Organic Start\\theme-v5\\functions\\node_modules\\firebase-functions\\lib\\index.js"}}
+[debug] [2020-08-07T02:41:13.104Z] DEBUG: [runtime-status] [16228] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.9.0","resolution":"C:\\Users\\Isaiah\\Documents\\Organic Start\\theme-v5\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-08-07T02:41:13.105Z] DEBUG: [runtime-status] [16228] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.13.0","resolution":"C:\\Users\\Isaiah\\Documents\\Organic Start\\theme-v5\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-08-07T02:41:13.105Z] DEBUG: [runtime-status] [16228] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.9.0","resolution":"C:\\Users\\Isaiah\\Documents\\Organic Start\\theme-v5\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-08-07T02:41:13.105Z] DEBUG: [runtime-status] [16228] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.13.0","resolution":"C:\\Users\\Isaiah\\Documents\\Organic Start\\theme-v5\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2020-08-07T02:41:13.269Z] DEBUG: [runtime-status] [16228] initializeApp(DEFAULT) {"databaseURL":"https://apt-reason-149015.firebaseio.com","storageBucket":"apt-reason-149015.appspot.com","projectId":"apt-reason-149015"}
+[warn] !  It looks like you're trying to access functions.config().bigcommerce but there is no value there. You can learn more about setting up config here: https://firebase.google.com/docs/functions/local-emulator {"metadata":{"emulator":{"name":"functions"},"message":"It looks like you're trying to access functions.config().bigcommerce but there is no value there. You can learn more about setting up config here: https://firebase.google.com/docs/functions/local-emulator"}}
+[warn] !  TypeError: Cannot read property 'id' of undefined
+    at Object.<anonymous> (C:\Users\Isaiah\Documents\Organic Start\theme-v5\functions\index.js:14:48)
+    at Module._compile (internal/modules/cjs/loader.js:776:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:690:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at C:\Users\Isaiah\AppData\Roaming\nvm\v10.16.0\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:681:33
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\Isaiah\AppData\Roaming\nvm\v10.16.0\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:5:58)
+    at process._tickCallback (internal/process/next_tick.js:68:7) {"metadata":{"emulator":{"name":"functions"},"message":"TypeError: Cannot read property 'id' of undefined\n    at Object.<anonymous> (C:\\Users\\Isaiah\\Documents\\Organic Start\\theme-v5\\functions\\index.js:14:48)\n    at Module._compile (internal/modules/cjs/loader.js:776:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)\n    at Module.load (internal/modules/cjs/loader.js:653:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:585:3)\n    at Module.require (internal/modules/cjs/loader.js:690:17)\n    at require (internal/modules/cjs/helpers.js:25:18)\n    at C:\\Users\\Isaiah\\AppData\\Roaming\\nvm\\v10.16.0\\node_modules\\firebase-tools\\lib\\emulator\\functionsEmulatorRuntime.js:681:33\n    at Generator.next (<anonymous>)\n    at fulfilled (C:\\Users\\Isaiah\\AppData\\Roaming\\nvm\\v10.16.0\\node_modules\\firebase-tools\\lib\\emulator\\functionsEmulatorRuntime.js:5:58)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}}
+[warn] !  We were unable to load your functions code. (see above) {"metadata":{"emulator":{"name":"functions"}}}
+[debug] [2020-08-07T02:41:13.382Z] DEBUG: [worker-~diagnostic~-5dc1b419-07c8-46e3-9b11-2b2e039b847d]: exited
+[debug] [2020-08-07T02:41:13.382Z] DEBUG: [worker-~diagnostic~-5dc1b419-07c8-46e3-9b11-2b2e039b847d]: FINISHED
+[debug] [2020-08-07T02:43:10.463Z] ----------------------------------------------------------------------
+[debug] [2020-08-07T02:43:10.464Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js functions:shell
+[debug] [2020-08-07T02:43:10.465Z] CLI Version:   8.7.0
+[debug] [2020-08-07T02:43:10.465Z] Platform:      win32
+[debug] [2020-08-07T02:43:10.465Z] Node Version:  v10.16.0
+[debug] [2020-08-07T02:43:10.466Z] Time:          Thu Aug 06 2020 22:43:10 GMT-0400 (Eastern Daylight Time)
+[debug] [2020-08-07T02:43:10.466Z] ----------------------------------------------------------------------
+[debug] [2020-08-07T02:43:10.466Z] 
+[debug] [2020-08-07T02:43:10.474Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-08-07T02:43:10.474Z] > authorizing via signed-in user
+[debug] [2020-08-07T02:43:10.475Z] [iam] checking project apt-reason-149015 for permissions ["firebase.projects.get"]
+[debug] [2020-08-07T02:43:10.477Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/apt-reason-149015:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2020-08-07T02:43:10.765Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 07 Aug 2020 02:43:21 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=143","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}

@@ -11,6 +11,8 @@
     "core-js": "^3.6.5",
     "creditcards": "^3.0.1",
     "easyzoom": "^2.5.3",
+    "firebase-admin": "^9.0.0",
+    "firebase-functions": "^3.9.0",
     "focus-within-polyfill": "^5.0.9",
     "foundation-sites": "^5.5.3",
     "headroom.js": "^0.11.0",

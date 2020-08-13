@@ -1,10 +1,10 @@
-import SwiperJS from 'swiper';
+import Swiper from 'swiper/bundle';
 
 const mobileQuery = window.matchMedia('(max-width: 769px)');
 
-const Swipers = mediaQuery => {
+const swipers = mediaQuery => {
     if (mediaQuery.matches) {
-        new SwiperJS('.default.swiper-container', {
+        const defaultSwipers = element => new Swiper(element, {
             slidesPerView: 1,
             spaceBetween: 16,
             breakpoints: {
@@ -23,17 +23,19 @@ const Swipers = mediaQuery => {
             },
             watchSlidesVisibility: true,
         });
-        new SwiperJS('.nav-carousel', {
+        const navSwiper = element => new Swiper(element, {
             freeMode: true,
             freeModeMomentum: false,
             spaceBetween: 0,
         });
+        defaultSwipers('.default.swiper-container');
+        navSwiper('.nav-carousel');
     }
 };
 
 const renderSwipers = () => {
-    Swipers(mobileQuery);
-    mobileQuery.addListener(Swipers);
+    swipers(mobileQuery);
+    mobileQuery.addListener(swipers);
 };
 
 export default renderSwipers;

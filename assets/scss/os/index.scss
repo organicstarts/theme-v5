@@ -21,10 +21,12 @@
 // @import "../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
 
 // Swiper JS
-@import "../../../node_modules/swiper/swiper";
+@import url("https://unpkg.com/swiper/swiper-bundle.min.css");
+// @import "../../../node_modules/swiper/swiper";
+@import "../../../node_modules/swiper/components/effect-fade/effect-fade.scss";
 
 // Globals
-@import "globals/grid.scss";
+@import "globals/grid";
 
 // Mixins & static css from 3rd party libraries
 @import "helpers/animations";
@@ -128,7 +130,30 @@
 }
 
 
-@import "pages/brands.scss";
-@import "pages/categories.scss";
-@import "pages/products.scss";
-@import "pages/home/index.scss";
+@import "pages/brands";
+@import "pages/categories";
+@import "pages/products";
+@import "pages/home/index";
+
+h5, h6 {
+    text-transform: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.pagination, .pagination-list {
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.pagination-item {
+    margin: 0;
+}
+
+#___ratingbadge_0 {
+    z-index: 2!important;
+    bottom: 100px!important;
+}

@@ -9,17 +9,19 @@ import renderProducts from './products';
 import renderSidebar from './sidebar';
 import renderSwipers from './swiper';
 import loadSwiperCards from './swiperCards';
+import priceAndPercent from './utils';
 
 export default {
-    cart: cart,
-    renderCategories: renderCategories,
-    renderHome: renderHome,
-    renderProducts: renderProducts,
-    loadSwiperCards: loadSwiperCards,
+    cart,
+    renderCategories,
+    renderHome,
+    renderProducts,
+    loadSwiperCards,
+    priceAndPercent,
     start: () => {
         cart.renderCart();
         renderNavigation();
         renderSidebar();
         renderSwipers();
-    }
+    },
 };

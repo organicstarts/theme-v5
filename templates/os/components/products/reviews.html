@@ -1,7 +1,14 @@
 
 <section id="product-reviews" data-product-reviews>
     <div class="container">
-        <h3>Product Reviews <small>({{lang 'products.reviews.header' total=reviews.total}})</small></h3>
+        <h3><span>Product Reviews<br><small>({{lang 'products.reviews.header' total=reviews.total}})</small></span>
+            <a href="{{product.url}}{{#if is_ajax}}#write_review{{/if}}"
+                {{#unless is_ajax}}data-reveal-id="modal-review-form"{{/unless}}
+                role="button"
+            >
+                {{lang 'products.reviews.new'}}
+            </a>
+        </h3>
         <ul>
             {{#if reviews.total}}
                 {{#each reviews.list}}

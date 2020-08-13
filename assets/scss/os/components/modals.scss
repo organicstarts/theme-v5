@@ -227,4 +227,16 @@
 //   @media (min-width: $gid-breakpoints(xl)) {
 //     .os-modal-xl { max-width: $modal-xl; }
 //   }
-  
+
+.modal {
+    background: transparent;
+}
+
+.modal-body {
+    overflow-y: auto;
+}
+
+.modal-content {
+    overflow: hidden;
+    border-radius: 1rem;
+}

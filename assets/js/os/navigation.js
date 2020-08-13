@@ -24,6 +24,6 @@ const renderNavigation = () => {
     }
 
     headroom.init();
-}
+};
 
 export default renderNavigation;
